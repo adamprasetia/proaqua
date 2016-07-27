@@ -17,6 +17,11 @@ class General_model extends CI_Model
 		}
 		return false;	
 	}				
+	function get_from_field_total($table_name)
+	{
+		$result = $this->db->get($table_name);
+		return $result->num_rows();
+	}
 	function dropdown($tbl_name,$caption,$where = array())
 	{
 		foreach ($where as $key => $value) {

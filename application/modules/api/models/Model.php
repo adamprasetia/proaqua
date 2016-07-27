@@ -24,5 +24,12 @@ class Model extends CI_Model
 		$this->db->from('barang');
 		$this->db->limit(10);
 		return $this->db->get()->result();
-	}	
+	}
+	function chart_permintaan_barang()
+	{
+		$this->db->select('date_format(tanggal,"%Y-%m") as y,count(id) as item1');
+		$this->db->group_by('date_format(tanggal,"%Y-%m")');
+		$this->db->order_by('tanggal','asc');
+		return $this->db->get('permintaan_barang');			
+	}
 }

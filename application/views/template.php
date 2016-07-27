@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="<?php echo base_url("assets/plugins/ionicons-2.0.1/css/ionicons.min.css") ?>">
   <link rel="stylesheet" href="<?php echo base_url("assets/plugins/AdminLTE-2.3.3/dist/css/AdminLTE.min.css") ?>">
   <link rel="stylesheet" href="<?php echo base_url("assets/plugins/AdminLTE-2.3.3/dist/css/skins/skin-blue.min.css") ?>">
+  <link rel="stylesheet" href="<?php echo base_url("assets/plugins/AdminLTE-2.3.3/plugins/morris/morris.css") ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/select2-4.0.3/css/select2.min.css')?>"/>
   <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css')?>"/>
   
@@ -20,6 +21,8 @@
   <script type="text/javascript" src="<?php echo base_url("assets/plugins/jquery-ui-1.11.2/jquery-ui.min.js") ?>"></script>
   <script type="text/javascript" src="<?php echo base_url("assets/plugins/AdminLTE-2.3.3/bootstrap/js/bootstrap.min.js") ?>"></script>
   <script type="text/javascript" src="<?php echo base_url("assets/plugins/AdminLTE-2.3.3/dist/js/app.min.js") ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url("assets/plugins/AdminLTE-2.3.3/plugins/morris/morris.min.js") ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url("assets/plugins/AdminLTE-2.3.3/plugins/morris/raphael-min.js") ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/plugins/price_format_plugin.js')?>"/></script>
   <script type="text/javascript" src="<?php echo base_url('assets/js/general.js')?>"/></script>  
 </head>
