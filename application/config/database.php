@@ -76,9 +76,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'proaqua',	
+	'username' => ($_SERVER['HTTP_HOST']=='localhost'?'root':'u477566178_adam'),
+	'password' => ($_SERVER['HTTP_HOST']=='localhost'?'':'proaqua'),
+	'database' => ($_SERVER['HTTP_HOST']=='localhost'?'proaqua':'u477566178_proaq'),	
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
