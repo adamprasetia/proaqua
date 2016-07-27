@@ -1,0 +1,15 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Home extends MY_Controller
+{
+	public function index(){
+		$data['active_menu'] = 'home';
+		$data['content'] = $this->load->view('home','',true);
+		$this->load->view('template',$data);
+	}
+	public function logout(){
+		$this->session->unset_userdata('user_login');
+		redirect('login');
+	}
+}
