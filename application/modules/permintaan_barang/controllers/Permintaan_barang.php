@@ -30,7 +30,7 @@ class Permintaan_barang extends MY_Controller
 			'nomor' => 'Nomor',
 			'tanggal' => 'Tanggal',
 			'toko_name' => 'Toko',
-			'jumlah' => 'Jumlah',
+			'jumlah' => 'Jumlah Item',
 			'total' => 'Total',
 			'status_name' => 'Status',
 		);

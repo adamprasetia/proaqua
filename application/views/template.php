@@ -91,6 +91,16 @@
         <li class="treeview <?php echo active_menu('permintaan_barang_list',$active_menu)?>"><?php echo anchor('permintaan_barang_list','<i class="fa fa-tasks"></i> <span>List Permintaan Barang</span>')?></li>
         <?php endif ?>
         <?php if (array_search($this->user_login['level'], array(1)) !== false): ?>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-bar-chart"></i> <span>Laporan</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li class="<?php echo active_menu('laporan_permintaan_barang',$active_menu)?>"><?php echo anchor('laporan_permintaan_barang','<i class="fa fa-circle-o"></i> Permintaan Barang')?></li>
+          </ul>
+        </li> 
+        <?php endif ?>
+        <?php if (array_search($this->user_login['level'], array(1)) !== false): ?>
         <li class="treeview <?php echo active_menu('user',$active_menu)?>"><?php echo anchor('user','<i class="fa fa-user"></i> <span>'.$this->lang->line('menu_user').'</span>')?></li>
         <?php endif ?>                       
       </ul>

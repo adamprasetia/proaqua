@@ -9,6 +9,7 @@
 	</ol>
 </section>
 <section class="content">
+    <?php if (array_search($this->user_login['level'], array(1)) !== false): ?>
 	<div class="row">
 		<div class="col-lg-3 col-xs-6">
 		  <!-- small box -->
@@ -72,6 +73,7 @@
 			<div class="chart" id="line-chart" style="height: 300px;"></div>
 		</div>
 	</div>
+    <?php endif ?>
 </section>
 <!-- page script -->
 <script>
