@@ -90,13 +90,21 @@
         <?php if (array_search($this->user_login['level'], array(1,3)) !== false): ?>
         <li class="treeview <?php echo active_menu('permintaan_barang_list',$active_menu)?>"><?php echo anchor('permintaan_barang_list','<i class="fa fa-tasks"></i> <span>List Permintaan Barang</span>')?></li>
         <?php endif ?>
-        <?php if (array_search($this->user_login['level'], array(1)) !== false): ?>
+        <?php if (array_search($this->user_login['level'], array(1,4)) !== false): ?>
+        <li class="treeview <?php echo active_menu('produksi_barang',$active_menu)?>"><?php echo anchor('produksi_barang','<i class="fa fa-tasks"></i> <span>Produksi Barang</span>')?></li>
+        <?php endif ?>
+        <?php if (array_search($this->user_login['level'], array(1,3,4)) !== false): ?>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-bar-chart"></i> <span>Laporan</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
+            <?php if (array_search($this->user_login['level'], array(1,3)) !== false): ?>
             <li class="<?php echo active_menu('laporan_permintaan_barang',$active_menu)?>"><?php echo anchor('laporan_permintaan_barang','<i class="fa fa-circle-o"></i> Permintaan Barang')?></li>
+            <?php endif ?>
+            <?php if (array_search($this->user_login['level'], array(1,4)) !== false): ?>
+            <li class="<?php echo active_menu('laporan_produksi_barang',$active_menu)?>"><?php echo anchor('laporan_produksi_barang','<i class="fa fa-circle-o"></i> Produksi Barang')?></li>
+            <?php endif ?>
           </ul>
         </li> 
         <?php endif ?>
