@@ -2,14 +2,15 @@
 
 class Model extends CI_Model 
 {
-	private $tbl_name = 'produksi_barang';
+	private $tbl_name = 'pengiriman_barang';
 	private $tbl_key 	= 'id';
 
 	public function query()
 	{
-		$data[] = $this->db->select('a.*,count(b.id) as jumlah');
+		$data[] = $this->db->select('a.*,count(b.id) as jumlah,c.name as toko_name');
 		$data[] = $this->db->from($this->tbl_name.' a');
 		$data[] = $this->db->join($this->tbl_name.'_detail b','a.id=b.id_parent','left');
+		$data[] = $this->db->join('toko c','a.toko=c.code','left');
 		$date_from = $this->input->post('date_from');
 		$date_to = $this->input->post('date_to');
 		if($date_from <> '' && $date_to <> ''){
@@ -27,7 +28,7 @@ class Model extends CI_Model
 	}
 	public function get_detail($id)
 	{	
-		$this->db->select('a.*,b.name as barang_name,b.price as harga');
+		$this->db->select('a.*,b.name as barang_name');
 		$this->db->from($this->tbl_name.'_detail a');
 		$this->db->join('barang b','a.kode_barang=b.code','left');
 		$this->db->where('id_parent',$id);

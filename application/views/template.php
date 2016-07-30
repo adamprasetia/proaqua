@@ -89,11 +89,13 @@
         <?php endif ?>
         <?php if (array_search($this->user_login['level'], array(1,3)) !== false): ?>
         <li class="treeview <?php echo active_menu('permintaan_barang_list',$active_menu)?>"><?php echo anchor('permintaan_barang_list','<i class="fa fa-tasks"></i> <span>List Permintaan Barang</span>')?></li>
+        <li class="treeview <?php echo active_menu('pengiriman_barang',$active_menu)?>"><?php echo anchor('pengiriman_barang','<i class="fa fa-tasks"></i> <span>Pengiriman Barang</span>')?></li>
         <?php endif ?>
         <?php if (array_search($this->user_login['level'], array(1,4)) !== false): ?>
         <li class="treeview <?php echo active_menu('produksi_barang',$active_menu)?>"><?php echo anchor('produksi_barang','<i class="fa fa-tasks"></i> <span>Produksi Barang</span>')?></li>
         <?php endif ?>
         <?php if (array_search($this->user_login['level'], array(1,3,4)) !== false): ?>
+        <li class="<?php echo active_menu('stok_barang',$active_menu)?>"><?php echo anchor('stok_barang','<i class="fa fa-tasks"></i> Stok Barang')?></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-bar-chart"></i> <span>Laporan</span> <i class="fa fa-angle-left pull-right"></i>
@@ -101,9 +103,13 @@
           <ul class="treeview-menu">
             <?php if (array_search($this->user_login['level'], array(1,3)) !== false): ?>
             <li class="<?php echo active_menu('laporan_permintaan_barang',$active_menu)?>"><?php echo anchor('laporan_permintaan_barang','<i class="fa fa-circle-o"></i> Permintaan Barang')?></li>
+            <li class="<?php echo active_menu('laporan_pengiriman_barang',$active_menu)?>"><?php echo anchor('laporan_pengiriman_barang','<i class="fa fa-circle-o"></i> Pengiriman Barang')?></li>
             <?php endif ?>
             <?php if (array_search($this->user_login['level'], array(1,4)) !== false): ?>
             <li class="<?php echo active_menu('laporan_produksi_barang',$active_menu)?>"><?php echo anchor('laporan_produksi_barang','<i class="fa fa-circle-o"></i> Produksi Barang')?></li>
+            <?php endif ?>
+            <?php if (array_search($this->user_login['level'], array(1,3,4)) !== false): ?>
+            <li class="<?php echo active_menu('laporan_stok_barang',$active_menu)?>"><?php echo anchor('laporan_stok_barang','<i class="fa fa-circle-o"></i> Stok Barang')?></li>
             <?php endif ?>
           </ul>
         </li> 

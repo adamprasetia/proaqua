@@ -1,14 +1,14 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Produksi_barang extends MY_Controller 
+class Pengiriman_barang extends MY_Controller 
 {
 	private $data = array();
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->data['title'] = 'Produksi Barang';
-		$this->data['index'] = 'produksi_barang';
+		$this->data['title'] = 'Pengiriman Barang';
+		$this->data['index'] = 'pengiriman_barang';
 		$this->data['active_menu'] = $this->data['index'];
 		$this->load->model($this->data['index'].'/model');
 	}
@@ -29,6 +29,7 @@ class Produksi_barang extends MY_Controller
 		$head_data = array(
 			'nomor' => 'Nomor',
 			'tanggal' => 'Tanggal',
+			'toko_name' => 'Toko',
 			'jumlah' => 'Jumlah Item',
 		);
 		$heading[] = '#';
@@ -44,6 +45,7 @@ class Produksi_barang extends MY_Controller
 				$i++,
 				$r->nomor,
 				format_dmy($r->tanggal),
+				$r->toko_name,
 				array('data'=>number_format($r->jumlah),'align'=>'right'),
 				anchor($this->data['index'].'/edit/'.$r->id.get_query_string(),$this->lang->line('edit'))
 				."&nbsp;|&nbsp;".anchor($this->data['index'].'/view/'.$r->id.get_query_string(),'View')
@@ -77,12 +79,14 @@ class Produksi_barang extends MY_Controller
 		$data = array(
 			'nomor' => $this->input->post('nomor'),
 			'tanggal' => format_ymd($this->input->post('tanggal')),
+			'toko' => $this->input->post('toko'),
 		);
 		return $data;		
 	}
 	private function _set_rules(){
 		$this->form_validation->set_rules('nomor','Nomor','required|trim');
 		$this->form_validation->set_rules('tanggal','Tanggal','required|trim');
+		$this->form_validation->set_rules('toko','Toko','required|trim');
 		$this->form_validation->set_error_delimiters('<p class="error">','</p>');
 	}
 	public function add(){
